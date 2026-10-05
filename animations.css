@@ -1,0 +1,285 @@
+/* ============================================================
+   animations.css — Animation & Keyframe Definitions
+   ============================================================ */
+
+/* ============================================================
+   PAGE ENTRY ANIMATIONS
+   ============================================================ */
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* ============================================================
+   HERO ENTRY SEQUENCE
+   ============================================================ */
+
+.hero-animate .hero-tag {
+  animation: fadeInDown 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s both;
+}
+
+.hero-animate .hero-roles {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.35s both;
+}
+
+.hero-animate .hero-headline {
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) 0.45s both;
+}
+
+.hero-animate .hero-desc {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.55s both;
+}
+
+.hero-animate .hero-actions {
+  animation: fadeInUp 0.6s cubic-bezier(0.4, 0, 0.2, 1) 0.65s both;
+}
+
+.hero-animate .hero-right {
+  animation: scaleIn 0.8s cubic-bezier(0.34, 1.20, 0.64, 1) 0.4s both;
+}
+
+.hero-animate .hero-stat-card {
+  animation: fadeIn 0.6s ease 0.9s both;
+}
+
+/* Navbar entrance */
+.navbar-animate {
+  animation: fadeInDown 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.05s both;
+}
+
+/* Page hero (inner pages) */
+.page-hero-animate .label-mono {
+  animation: fadeInDown 0.5s ease 0.2s both;
+}
+
+.page-hero-animate h1 {
+  animation: fadeInUp 0.6s ease 0.3s both;
+}
+
+.page-hero-animate p {
+  animation: fadeInUp 0.6s ease 0.4s both;
+}
+
+/* ============================================================
+   BACKGROUND AMBIENT PULSE
+   ============================================================ */
+
+@keyframes ambientPulse {
+  0%, 100% {
+    opacity: 0.06;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.12;
+    transform: scale(1.05);
+  }
+}
+
+.hero-bg-shape-1 {
+  animation: ambientPulse 8s ease-in-out infinite;
+}
+
+.hero-bg-shape-2 {
+  animation: ambientPulse 10s ease-in-out infinite reverse;
+}
+
+/* ============================================================
+   FLOAT ANIMATION
+   ============================================================ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-10px); }
+}
+
+/* ============================================================
+   RIPPLE ON CLICK
+   ============================================================ */
+
+@keyframes ripple {
+  from {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  to {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}
+
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(229, 9, 20, 0.25);
+  animation: ripple 400ms cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  pointer-events: none;
+}
+
+/* ============================================================
+   SKILL CARD TILT (managed by JS)
+   ============================================================ */
+
+.tilt-card {
+  transition: transform 200ms ease, box-shadow var(--transition-base);
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+
+/* ============================================================
+   MAGNETIC BUTTON (managed by JS)
+   ============================================================ */
+
+.magnetic-btn {
+  transition: transform 300ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  will-change: transform;
+}
+
+/* ============================================================
+   LOADING SPINNER
+   ============================================================ */
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  display: inline-block;
+}
+
+/* ============================================================
+   TEXT CHAR REVEAL (optional JS-driven)
+   ============================================================ */
+
+@keyframes charReveal {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.char-wrap {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.char {
+  display: inline-block;
+  animation: charReveal 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* ============================================================
+   SCROLL PROGRESS BAR
+   ============================================================ */
+
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 2px;
+  background: var(--accent-primary);
+  z-index: 9980;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 50ms linear;
+  box-shadow: 0 0 8px var(--accent-glow);
+}
+
+/* ============================================================
+   HOVER GLOW PULSE
+   ============================================================ */
+
+@keyframes glowPulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--accent-glow-soft);
+  }
+  50% {
+    box-shadow: 0 0 40px var(--accent-glow), 0 0 80px var(--accent-glow-soft);
+  }
+}
+
+.glow-pulse:hover {
+  animation: glowPulse 2s ease infinite;
+}
+
+/* ============================================================
+   STAGGER UTILITY (JS adds .stagger-parent to trigger)
+   ============================================================ */
+
+.stagger-parent.revealed > * {
+  animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.stagger-parent.revealed > *:nth-child(1) { animation-delay: 0.05s; }
+.stagger-parent.revealed > *:nth-child(2) { animation-delay: 0.12s; }
+.stagger-parent.revealed > *:nth-child(3) { animation-delay: 0.19s; }
+.stagger-parent.revealed > *:nth-child(4) { animation-delay: 0.26s; }
+.stagger-parent.revealed > *:nth-child(5) { animation-delay: 0.33s; }
+.stagger-parent.revealed > *:nth-child(6) { animation-delay: 0.40s; }
+.stagger-parent.revealed > *:nth-child(7) { animation-delay: 0.47s; }
+.stagger-parent.revealed > *:nth-child(8) { animation-delay: 0.54s; }

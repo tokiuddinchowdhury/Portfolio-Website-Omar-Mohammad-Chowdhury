@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Replace YOUR-DOMAIN.TLD with your production hostname before deployment. -->
+  <url><loc>https://YOUR-DOMAIN.TLD/</loc></url>
+  <url><loc>https://YOUR-DOMAIN.TLD/about.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.TLD/what-i-do.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.TLD/projects.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.TLD/blog.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.TLD/contact.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.TLD/artholingo.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.TLD/baksutra.html</loc></url>
+  <url><loc>https://YOUR-DOMAIN.TLD/qrify.html</loc></url>
+</urlset>

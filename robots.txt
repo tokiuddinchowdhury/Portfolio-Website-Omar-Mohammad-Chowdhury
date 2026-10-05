@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Replace YOUR-DOMAIN.TLD with the production site hostname before deployment.
+Sitemap: https://YOUR-DOMAIN.TLD/sitemap.xml

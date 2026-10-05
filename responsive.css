@@ -1,0 +1,265 @@
+/* ============================================================
+   responsive.css — responsive layout overrides
+   ============================================================ */
+
+@media (max-width:1023px){
+  :root{
+    --nav-height:64px;
+    --section-padding:clamp(3rem,6vw,5rem);
+  }
+
+  .nav-links,
+  .nav-right .nav-cta{display:none!important;}
+
+  .nav-hamburger{display:flex!important;}
+
+  .hero-content{grid-template-columns:1fr;}
+  .hero-left{
+    order:2;
+    align-items:center;
+    text-align:center;
+  }
+  .hero-right{order:1;}
+  .hero-desc{max-width:600px;margin-inline:auto;}
+  .hero-actions{justify-content:center;}
+  .hero-logo-stage{width:min(380px,62vw);margin-inline:auto;}
+
+  .about-grid,
+  .contact-grid,
+  .two-column-grid,
+  .learning-inner,
+  .cta-inner{
+    grid-template-columns:1fr;
+  }
+
+  .skills-grid{grid-template-columns:1fr 1fr;}
+  .approach-grid{grid-template-columns:1fr 1fr;}
+  .blog-grid{grid-template-columns:1fr 1fr;}
+  .footer-grid{grid-template-columns:1.2fr 1fr 1fr;}
+}
+
+@media (max-width:767px){
+  html{overflow-x:hidden;}
+
+  body{cursor:auto;}
+
+  .cursor,
+  .custom-cursor,
+  .cursor-dot,
+  .cursor-ring{display:none!important;}
+
+  button,a{cursor:pointer;}
+
+  .navbar-inner{padding-inline:1rem;}
+
+  .navbar-floating{
+    padding:.6rem .8rem;
+    border-radius:var(--radius-xl);
+  }
+
+  .nav-brand{font-size:1.2rem;}
+
+  .nav-hamburger{
+    width:38px;
+    height:38px;
+  }
+
+  .hero{
+    min-height:auto;
+    padding-top:calc(var(--nav-height) + 1.25rem);
+    padding-bottom:var(--space-4xl);
+  }
+
+  .hero-headline{
+    font-size:clamp(2rem,9vw,3rem);
+  }
+
+  .hero-roles{
+    justify-content:center;
+    text-align:center;
+    flex-wrap:wrap;
+  }
+
+  .hero-actions{
+    flex-direction:column;
+    width:100%;
+  }
+
+  .hero-actions .btn{
+    width:100%;
+    justify-content:center;
+  }
+
+  .hero-logo-stage{
+    width:min(300px,78vw);
+  }
+
+  .hero-photo-frame{inset:auto;}
+
+  .hero-logo-mark{
+    font-size:clamp(3rem,14vw,5rem);
+  }
+
+  .projects-grid,
+  .skills-grid,
+  .approach-grid,
+  .blog-grid,
+  .project-gallery{
+    grid-template-columns:1fr!important;
+  }
+
+  .project-nav-links,
+  .features-detail-list{
+    grid-template-columns:1fr!important;
+  }
+
+  .skill-item{
+    grid-template-columns:8px minmax(0,1fr);
+  }
+
+  .skill-level{
+    grid-column:2;
+    margin-top:-.3rem;
+  }
+
+  .contact-form-wrap,
+  .contact-form-card{
+    padding:1rem;
+  }
+
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .footer-bottom,
+  .footer-bottom-inner{
+    flex-direction:column;
+    align-items:flex-start;
+  }
+
+  .cta-visual{max-width:280px;}
+
+  .page-hero{
+    padding:calc(var(--nav-height) + 2.5rem) 0 3rem;
+    min-height:280px;
+  }
+
+  .page-hero .section-title{
+    font-size:clamp(2rem,10vw,3.2rem);
+  }
+}
+
+@media (max-width:479px){
+  .footer-grid{grid-template-columns:1fr;}
+  .nav-brand{font-size:1.1rem;}
+  .btn{padding:.7rem 1.05rem;font-size:.85rem;}
+  .container{padding-inline:1rem;}
+}
+
+@media (min-width:1440px){
+  :root{--container-max:1360px;}
+}
+
+@media (min-width:2560px){
+  :root{--container-max:1600px;}
+  body{font-size:1.1rem;}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    animation-duration:.01ms!important;
+    animation-iteration-count:1!important;
+    transition-duration:.01ms!important;
+    scroll-behavior:auto!important;
+  }
+
+  .reveal{
+    opacity:1!important;
+    transform:none!important;
+  }
+
+  .cursor,
+  .custom-cursor,
+  .cursor-dot,
+  .cursor-ring{display:none!important;}
+}
+
+@media print{
+  .navbar,
+  .mobile-nav-overlay,
+  .mobile-nav-panel,
+  .cursor,
+  .custom-cursor,
+  .page-transition,
+  .hero-bg,
+  .footer-cta{display:none!important;}
+
+  body{
+    background:#fff;
+    color:#000;
+    font-size:12pt;
+  }
+}
+
+
+/* ============================================================
+   FINAL RESPONSIVE POLISH
+   ============================================================ */
+@media (max-width: 1100px) {
+  .navbar-floating { gap: .75rem; padding-left: 1rem; }
+  .nav-links { gap: 0; }
+  .nav-link { padding-inline: .62rem; font-size: .78rem; }
+  .nav-right { gap: .45rem; }
+  .nav-cta { padding-inline: 1rem; }
+}
+
+@media (max-width: 1023px) {
+  .navbar { padding: .7rem 0; }
+  .navbar-floating { min-height: 58px; }
+  .nav-links,
+  .nav-right .nav-cta { display: none !important; }
+  .nav-right { margin-left: auto; }
+  .nav-hamburger { display: flex !important; }
+  .about-grid > :last-child { gap: 1rem; }
+  .skills-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .approach-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .footer:not(.site-footer) .footer-grid,
+  .footer-main { grid-template-columns: minmax(0,1.25fr) minmax(140px,.75fr) minmax(190px,.9fr); gap: 2rem; }
+  .site-footer .footer-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+
+@media (max-width: 767px) {
+  .navbar { padding: .55rem 0; }
+  .navbar-floating { min-height: 54px; padding: .45rem .6rem .45rem .9rem; border-radius: 18px; }
+  .nav-brand { font-size: 1.12rem; }
+  .nav-hamburger { width: 38px; height: 38px; }
+  .mobile-nav-panel { width: min(92vw, 380px); }
+  .mobile-nav-link { font-family: var(--font-display); font-weight: 600; }
+  .about-grid > :last-child { gap: .9rem; }
+  .skills-grid,
+  .approach-grid { grid-template-columns: 1fr !important; }
+  .skill-card,
+  .approach-card { padding: 1.2rem; }
+  .learning-inner { gap: 1.25rem; }
+  .learning-item { padding: .9rem; grid-template-columns: 38px minmax(0,1fr); }
+  .learning-item-icon { width: 38px; height: 38px; }
+  .blog-filter-bar { gap: .45rem; }
+  .blog-filter-btn { padding: .45rem .7rem; }
+  .footer:not(.site-footer) .footer-grid,
+  .footer-main,
+  .site-footer .footer-grid { grid-template-columns: 1fr; gap: 1.75rem; }
+  .footer-social,
+  .footer-socials,
+  .footer-social-links { margin-top: .8rem; }
+  .footer-bottom,
+  .footer-bottom-inner { align-items: flex-start; }
+  .contact-grid { gap: 1.25rem; }
+}
+
+@media (max-width: 479px) {
+  .navbar-inner { padding-inline: .8rem; }
+  .navbar-floating { padding-left: .75rem; }
+  .container { padding-inline: 1rem; }
+  .social-btn,
+  .social-link,
+  .footer-social-link { flex-basis: 36px; width: 36px; height: 36px; }
+}
